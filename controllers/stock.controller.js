@@ -45,14 +45,15 @@ export const stockCheckbyItemCode = asyncErrorHandler(
       return res.status(200).json({
         code: 200,
         status: false,
-        message: "Stock is out of stock",
+        data: { message: "Stock is out of stock" },
       });
     }
     res.status(200).json({
       code: 200,
       status: true,
-      message: "Stock fetched successfully",
-      data: stock,
+      data: {
+        message: "Stock fetched successfully",
+      },
     });
   }
 );
