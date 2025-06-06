@@ -36,6 +36,7 @@ export const stockCheckbyItemCode = asyncErrorHandler(
   async (req, res, next) => {
     const { itemCode } = req.params;
     const stock = await Stock.findOne({ itemCode });
+    console.log("stock", stock);
 
     if (!stock) {
       return next(new CustomError(404, "Stock not found"));
