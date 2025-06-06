@@ -17,7 +17,7 @@ export const getAllStock = asyncErrorHandler(async (req, res, next) => {
   res.status(200).json({
     code: 200,
     status: "success",
-    message: "Stock fetched successfully",
+    message: "Get all of the stock data.",
     data: stock,
   });
 });
