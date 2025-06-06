@@ -9,6 +9,7 @@ const stockSchema = new mongoose.Schema({
   itemCode: {
     type: String,
     required: [true, "Please provide a serial for the stock"],
+    unique: true,
   },
   numberOfItem: {
     type: Number,

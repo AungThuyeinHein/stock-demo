@@ -31,3 +31,27 @@ export const getStockById = asyncErrorHandler(async (req, res, next) => {
     data: stock,
   });
 });
+
+export const stockCheckbyItemCode = asyncErrorHandler(
+  async (req, res, next) => {
+    const { itemCode } = req.params;
+    const stock = await Stock.findOne({ itemCode });
+
+    if (!stock) {
+      return next(new CustomError(404, "Stock not found"));
+    }
+    if (stock.numberOfItem <= 0) {
+      return res.status(200).json({
+        code: 200,
+        status: false,
+        message: "Stock is out of stock",
+      });
+    }
+    res.status(200).json({
+      code: 200,
+      status: true,
+      message: "Stock fetched successfully",
+      data: stock,
+    });
+  }
+);
