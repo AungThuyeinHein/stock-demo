@@ -1,0 +1,24 @@
+{
+  "name": "stock-demo",
+  "version": "1.0.0",
+  "description": "stock testing",
+  "license": "ISC",
+  "author": "B@C",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "dev": "export NODE_ENV=development && nodemon server.js",
+    "prod": "export NODE_ENV=production && node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.1.0",
+    "mongoose": "^8.15.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
